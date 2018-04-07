@@ -1,4 +1,8 @@
 print "***Dumbass Python Calculator***"
+import time
+localtime = time.asctime( time.localtime(time.time()) )
+print "Local current time :", localtime
+import math
 print ">>1.Addition"
 print ">>2.Subtraction"
 print ">>3.Multiplication"
@@ -8,9 +12,11 @@ print ">>6.Factorial"
 print ">>7.Straight Line Equation"
 print ">>8.Prime Number Checker"
 print ">>9.Quadratic Equation Solver"
+print ">>10.Multiplication Table of a number"
+print ">>11.Power Table of a number"
+print ">>12.Roll the dice"
 n1=input(">>>Enter number corresponding to desired function:")
 n=int(n1)
-v=1
 if n==1:
     a=input(">Enter number 1:")
     b=input(">Enter number 2:")
@@ -55,13 +61,13 @@ elif n==7:
     y1=int(y11)
     y2=int(y21)
     m=(y2-y1)/(x2-x1)
-    print"Gradient=",m
+    print">>Gradient=",m
     c=y1-(m*x1)
-    print"Y intercept=",c
+    print">>Y intercept=",c
     mp1=(x1+x2)/2
     mp2=(y1+y2)/2
-    print"Midpoint x is",mp1
-    print"Midpont y is",mp2
+    print">>Midpoint x is",mp1
+    print">>Midpont y is",mp2s
 elif n==8:
 
     num = int(input(">>Enter a number: "))
@@ -96,3 +102,25 @@ elif n==9:
     x2=(m-k)/(2*a)
     print ">>Root 1:",x1
     print ">>Root 2:",x2
+elif n==10:
+    n=int(input(">>Enter number:"))
+    c=int(input(">>Enter the value till which you wish to multiply:"))
+    for i in range(1,c+1):
+        r=i*n
+        print n,"Times",i,"is",r
+elif n==11:
+    n=int(input(">>Enter number:"))
+    c=int(input(">>Enter the value till which you wish to be powered to:"))
+    for i in range(1,c+1):
+        r=n**i
+        print n,"to the power of",i,"is",r
+elif n==12:
+        import random
+        min=1
+        max=6
+        r="yes"
+        while r=="yes":
+            print"Rolling the dice"
+            print ">>No.1:",random.randint(min,max)
+            print ">>No.2:",random.randint(min,max)
+            break
