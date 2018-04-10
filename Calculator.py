@@ -1,8 +1,7 @@
-
 print "***Dumbass Python Calculator***"
 import time
 localtime = time.asctime( time.localtime(time.time()) )
-print "Local current time :", localtime
+print "Time:", localtime
 import math
 print ">>1.Addition"
 print ">>2.Subtraction"
@@ -16,11 +15,13 @@ print ">>9.Quadratic Equation Solver"
 print ">>10.Multiplication Table of a number"
 print ">>11.Power Table of a number"
 print ">>12.Roll the dice"
+print ">>13.Phythagorean Theorem"
+print ">>14.Simple Interest"
 x=0
 while x==0:
     n1=input(">>>Enter number corresponding to desired function:")
     n=int(n1)
-    if n>12:
+    if n>14:
         print(">Invalid Number<")
     if n==1:
         a=input(">Enter number 1:")
@@ -135,3 +136,43 @@ while x==0:
                 print ">>No.1:",random.randint(min,max)
                 print ">>No.2:",random.randint(min,max)
                 break
+    elif n==13:
+        print 'Pythagorean Theorem'
+        print'>1.Find Hypotenuse'
+        print '>2.Find Base'
+        print '>3.Find Height'
+        i=0
+        while i==0:
+            n=int(input('Enter number corresponding to desired function:'))
+            if n>3:
+                print 'Invalid input'
+                continue
+            if n==1:
+                a=float(input("Enter Base:"))
+                b=float(input("Enter Height:"))
+                c=((a**2)+(b**2))**0.5
+                print 'Hypotenuse:',c
+            elif n==2:
+                b=float(input("Enter Height:"))
+                c=float(input("Enter Hypotenuse:"))
+                if b>c:
+                    print 'Enter valid input'
+                    continue
+                a=((c**2)-(b**2))**0.5
+                print 'Base;',a
+            elif n==3:
+                b=float(input("Enter Base:"))
+                c=float(input("Enter Hypotenuse:"))
+                if b>c:
+                    print 'Enter valid input'
+                    continue
+                a=((c**2)-(b**2))**0.5
+                print 'Height:',a
+    elif n==14:
+        p=float(input("Enter principle:"))
+        t=float(input("Enter time:"))
+        r=float(input("Enter rate:"))
+        si=(p*t*r)/100
+        a=si+p
+        print 'Simple Interest:',si
+        print 'Total Amount+Interest:',a
